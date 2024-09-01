@@ -67,8 +67,8 @@ export default function ListOfFamily() {
       confirmButtonText: "Yes, delete it!"
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const delUser = await axios.post(`http://localhost:5000/api/delfamily/${id}`);
-        const responseget = await axios.get("http://localhost:5000/api/getfamily");
+        await axios.post(`http://localhost:5000/api/delfamily/${id}`);
+        await axios.get("http://localhost:5000/api/getfamily");
         // if (responseget.status === 200) {
         //   props.setData(responseget?.data.data);
         // }
@@ -91,7 +91,7 @@ export default function ListOfFamily() {
 
   useEffect(() => {
     getUser();
-  }, []);
+  }, [lstfamily]);
 
   return (
     <>

@@ -42,8 +42,6 @@ export default function AddUpdateFamily(props) {
     defaultValues: isEdit && objFamily
   })
 
-  const [data, setData] = useState([]);
-
   const onSubmitData = async (data) => {
 
     if (isEdit === true) {
@@ -60,7 +58,7 @@ export default function AddUpdateFamily(props) {
     const responseget = await axios.get(
       "http://localhost:5000/api/getfamily"
     );
-    setData(responseget?.data.data);
+    // setData(responseget?.data.data);
     console.log(objFamily);
     console.log("Edit :- ", isEdit);
   };
